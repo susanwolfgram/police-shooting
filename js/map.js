@@ -23,6 +23,7 @@ var customBuild = function(data, map) {
 	var forties = new L.LayerGroup([]);
 	var fifties = new L.LayerGroup([]);
 	var overSixty =  new L.LayerGroup([]);
+	var ageUnknown =  new L.LayerGroup([]);
 	var killed = 0; 
 	var male = 0; 
 	var female = 0; 
@@ -52,6 +53,8 @@ var customBuild = function(data, map) {
 				circ.addTo(fifties);
 			} else if (age >= 60) {
 				circ.addTo(overSixty);
+			} else {
+				circ.addTo(ageUnknown);
 			}
 			if (data[i]["Victim's Gender"] == "Male") {
 				circ.addTo(layerMale);
@@ -65,7 +68,7 @@ var customBuild = function(data, map) {
 	var layers = {"Male Victims" : layerMale, "Female/Unspecified Victims" : layerFemale, 
 	"Victims Under 20" : underTwenty, "Victims Age 20-29" : twenties, 
 	"Victims Age 30-39" : thirties, "Victims Age 40-49" : forties,
-	"Victims Age 50-59" : fifties, "Victims Over 60" : overSixty};
+	"Victims Age 50-59" : fifties, "Victims Over 60" : overSixty, "Age Unknown" : ageUnknown};
 	L.control.layers(null, layers).addTo(map);
 
 	$('#killedMen').text(killedMale);
