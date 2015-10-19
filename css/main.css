@@ -1,4 +1,36 @@
 /* You'll probably want to add some styles here */
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,300);
+#blue {
+	color: blue;
+}
+
+body {
+	background-image: url('../bg3.jpg');
+	font-family: 'Raleway';
+}
+
+.container {
+	background-color: white;
+}
+
 #container {
+	border: 5px solid #fafafa;
 	height:800px;
+}
+
+h1, table {
+	text-align: center;
+}
+
+#red {
+	color: red;
+}
+
+table {
+	font-family: 'Helvetica'
+}
+
+th {
+	text-align: center;
+	width: 20%;
 }
